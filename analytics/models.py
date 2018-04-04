@@ -23,7 +23,7 @@ class Tender(models.Model):
     enquiryPeriodStartDate = models.DateTimeField()
 
 
-class Publiser(models.Model):
+class Publisher(models.Model):
 	uri = models.URLField()
 	uid = models.CharField(max_length=10)
 	name = models.CharField(max_length=30)
