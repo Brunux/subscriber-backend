@@ -7,6 +7,9 @@ from django.db import models
 
 
 class Tender(models.Model):
+    """
+    Tender doc here
+    """
     title		 = models.CharField(max_length=30)
     status = models.CharField(max_length=30)
     procurentMethodRationale = models.CharField(max_length=30)
@@ -22,14 +25,26 @@ class Tender(models.Model):
     procuringEntityId = models.CharField(max_length=30)
     enquiryPeriodStartDate = models.DateTimeField()
 
+    def __str__(self):
+        return '{}'.format(self.title)
+
 
 class Publisher(models.Model):
-	uri = models.URLField()
-	uid = models.CharField(max_length=10)
-	name = models.CharField(max_length=30)
+    """
+    Publisher doc here
+    """
+    uri = models.URLField()
+    uid = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return '{}'.format(self.name)
 
 
 class Buyer(models.Model):
+    """
+    Buyer doc here
+    """
     oic = models.CharField(max_length=30)
     language = models.CharField(max_length=30)
     initiationType = models.CharField(max_length=30)
@@ -37,14 +52,18 @@ class Buyer(models.Model):
     buyerName = models.CharField(max_length=30	)
     date =  models.DateTimeField()
 
+    def __str__(self):
+        return '{}'.format(self.buyerName)
 
 
-class Tag(models.Model):					
+class Tag(models.Model):
+    """
+    Tag doc here
+    """
     cero = models.CharField(max_length=10)
 
     def __str__(self):
         return '{}'.format(self.cero)
-
 
 
 class Record(models.Model):
@@ -53,6 +72,10 @@ class Record(models.Model):
     """
     ocid = models.CharField('OCID', max_length=50)
     planning = models.ForeignKey('Planning')
+    tender = models.ForeignKey('Tender')
+    publisher = models.ForeignKey('Publisher')
+    buyer = models.ForeignKey('Buyer')
+    tag = models.ForeignKey('Tag')
 
     def __str__(self):
         return '{}'.format(self.ocid)
