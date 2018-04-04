@@ -34,7 +34,7 @@ class Buyer(models.Model):
     language = models.CharField(max_length=30)
     initiationType = models.CharField(max_length=30)
     buyerId = models.CharField(max_length=10)
-    buyerName = models.CharField(max_length=30)
+    buyerName = models.CharField(max_length=30	)
     date =  models.DateTimeField()
 
 
