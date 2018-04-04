@@ -4,7 +4,9 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^', include(admin.site.urls)),
+    url(r'^jet/', include('jet.urls', 'jet')),
+    url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^analytics/', include('analytics.urls')),
 ]
 
