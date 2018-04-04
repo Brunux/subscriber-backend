@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from models import Planning, Record
+from models import Planning, Record, Tender, Publisher, Buyer, Tag
 
 # Register your models here.
 
