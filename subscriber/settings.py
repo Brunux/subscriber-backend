@@ -109,6 +109,7 @@ class Common(Configuration):
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/1.11/howto/static-files/
     STATIC_URL = '/static/'
+    STATIC_ROOT = '/opt/talentland/subscriber-backend/static/'
 
     AUTH_USER_MODEL = 'users.User'
 
@@ -136,7 +137,7 @@ class Development(Common):
     """
     DEBUG = True
 
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 
     INTERNAL_IPS = [
         '127.0.0.1'
