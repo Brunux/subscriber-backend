@@ -10,7 +10,7 @@ class Tender(models.Model):
     """
     Tender doc here
     """
-    title		 = models.CharField(max_length=30)
+    title = models.CharField(max_length=30)
     status = models.CharField(max_length=30)
     procurentMethodRationale = models.CharField(max_length=30)
     procurentMethod = models.CharField(max_length=30)
