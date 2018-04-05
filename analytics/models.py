@@ -10,13 +10,13 @@ class Tender(models.Model):
     """
     Tender doc here
     """
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=250)
     status = models.CharField(max_length=30)
     procurentMethodRationale = models.CharField(max_length=30)
     procurentMethod = models.CharField(max_length=30)
     tenderId = models.CharField(max_length=10)
     hasEnquiries = models.BooleanField()
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=250)
 
     amount = models.IntegerField()
     period = models.DateTimeField()
@@ -45,11 +45,11 @@ class Buyer(models.Model):
     """
     Buyer doc here
     """
-    oic = models.CharField(max_length=30)
+    oic = models.CharField(max_length=100)
     language = models.CharField(max_length=30)
     initiationType = models.CharField(max_length=30)
     buyerId = models.CharField(max_length=10)
-    buyerName = models.CharField(max_length=30	)
+    buyerName = models.CharField(max_length=250)
     date =  models.DateTimeField()
 
     def __str__(self):
@@ -91,9 +91,9 @@ class Planning(models.Model):
     """
 
     budget_break_down_url = models.URLField()
-    budget_break_down_description = models.CharField('Budget Description', max_length=50)
+    budget_break_down_description = models.CharField('Budget Description', max_length=250)
     budget_break_down_id = models.IntegerField()
-    budget_classification_level_label = models.CharField('Level Label', max_length=50)
+    budget_classification_level_label = models.CharField('Level Label', max_length=250)
     budget_classification_level_description = models.CharField('Level description',  max_length=50)
 
     def __str__(self):
