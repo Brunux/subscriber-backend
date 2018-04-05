@@ -106,6 +106,7 @@ class Contracts(models.Model):
     """
 
     value_with_tax = models.CharField(max_length=50)
+
     contract_title = models.CharField(max_length=250)
     implementation = models.CharField(max_length=250)
     suppliers = models.CharField(max_length=50)

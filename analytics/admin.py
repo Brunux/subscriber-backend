@@ -2,7 +2,9 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+
 from models import Planning, Record, Tender, Publisher, Buyer, Tag, Contracts, Parties, Awards
+
 
 # Register your models here.
 
@@ -38,6 +40,7 @@ class EventAdmin(admin.ModelAdmin):
 @admin.register(Awards)
 class EventAdmin(admin.ModelAdmin):
     list_display = ('award_title', 'award_description', 'award_id',)
+
 
 @admin.register(Tag)
 class EventAdmin(admin.ModelAdmin):
