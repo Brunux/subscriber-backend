@@ -88,10 +88,31 @@ class Planning(models.Model):
 
     budget_break_down_url = models.URLField()
     budget_break_down_description = models.CharField('Budget Description', max_length=50)
-    budget_break_down_id = models.IntegerField()
+    budget_break_down_id = models.cc()
     budget_classification_level_label = models.CharField('Level Label', max_length=50)
     budget_classification_level_description = models.CharField('Level description',  max_length=50)
 
     def __str__(self):
         return '{}'.format(self.budget_classification_level_label)
 
+
+class Contratcs(models.Model):
+    """
+    First stage of the open contratcs standar please check documentation at: url-here
+    """
+
+    value_with_tax = models.CharField(max_length=50)
+    title = models.CharField(max_length=250)
+    implementation = models.CharField(max_length=250)
+    suppliers = models.CharField(max_length=50)
+    buyers = models.CharField(max_length=50)
+    date_signed = models.CharField(max_length=50)
+    period = models.CharField(max_length=50)
+    award_id = models.CharField(max_length=50)
+    id = models.IntegerField()
+    amount = models.IntegerField()
+    status = models.CharField(max_length=50)
+    contract_details = models.CharField(max_length=250)
+
+    def __str__(self):
+        return '{}'.format(self.id, self.title, self.status, self.contract_details)
